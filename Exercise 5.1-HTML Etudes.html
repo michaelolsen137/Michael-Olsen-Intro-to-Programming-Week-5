@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+  <head>
+    <title>Age Calculator</title>
+  </head>
+  <body>
+    <h1>Age Calculator</h1>
+    <form>
+      <fieldset>
+        <legend>Age Finder</legend>
+          <form action="/action_page.php">
+            Name:
+            <input type="text" id="name" name="name">
+            Birthday:
+            <input type="date" id="bday" name="bday">
+            <input type="button" id="submit" name="submit" value="Submit">
+          </form>
+        <p id="demo"></p>
+      </fieldset>
+    </form>
+
+    <script>
+      let name = document.getElementById("name");
+      let birthday = document.getElementById("bday");
+      let submit = document.getElementById("submit");
+      let ageSlot = document.getElementById("demo");
+      submit.addEventListener("click",myFunction);
+
+      function myFunction(){
+        let today = new Date();
+        let bdayParts =birthday.value.split('-');
+        let birthDate = new Date(bdayParts[0], bdayParts[1] - 1, bdayParts[2]);
+        let age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    if(age != 1){
+      return document.getElementById("demo").innerHTML =  name.value + ' is ' + age + ' years old.';
+    }else{
+      return document.getElementById("demo").innerHTML =  name.value + ' is ' + age + ' year old.';
+    }
+}
+
+    </script>
+
+  </body>
+</html>

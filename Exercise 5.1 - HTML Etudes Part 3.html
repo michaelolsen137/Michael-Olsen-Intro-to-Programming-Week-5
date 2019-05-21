@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ul id="myList1"><li>Coffee</li><li>Tea</li></ul>
+
+<ul id="myList2"><li>Water</li><li>Milk</li></ul>
+
+<p>Click the button to move an item from one list to another</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  var node = document.getElementById("myList2").lastChild;
+  var list = document.getElementById("myList1");
+  // list.insertBefore(node, list.childNodes[0]);
+
+console.log(node.parentNode);
+console.log(list.parentnode);
+      let ascendarr = []
+  // node.innerHTML = "Paragraph changed!";
+  for(i=0; i<document.getElementsByTagName('*').length; i++){
+    node.parentNode.insertBefore(node, node.parentNode.childNodes[0])
+    ascendarr.push(node.parentNode.tagName)
+  }
+  console.log(ascendarr);
+
+  }
+  alert('There are ' + document.getElementsByTagName('*').length + ' elements in the document');
+  </script>
+
+</html>
