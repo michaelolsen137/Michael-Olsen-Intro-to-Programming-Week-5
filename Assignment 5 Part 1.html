@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+<script type="text/javascript">
+  let songs = [
+    {
+      title: "Getting Away with It (All Messed Up)",
+      artist: "James",
+      album: "Pleased to Meet You",
+      year: 2001,
+      art: "https://upload.wikimedia.org/wikipedia/en/2/2a/JamesPleasedToMeetYou.jpg"
+    },
+    {
+      title: "Renaissance Affair",
+      artist: "Hooverphonic",
+      album: "Blue Wonder Power Milk",
+      year: 1998,
+      art: "https://upload.wikimedia.org/wikipedia/en/1/17/Hooverphonic-Blue_Wonder_Power_Milk.jpg"
+    },
+    {
+      title: "White Nights",
+      artist: "Oh Land",
+      album: "Oh  Land",
+      year: 2011,
+      art: "https://upload.wikimedia.org/wikipedia/en/6/68/Oh_Land_%28album%29.png"
+    }
+  ];
+  let title;
+  let artist;
+  let album;
+  let year;
+  let art;
+  let array = []
+  let array2 = []
+  let array3 = []
+  let array4 = []
+function load() {
+    for(i=0; i<songs.length; i++){
+      art = document.createElement('img');
+      art.src = songs[i].art;
+      art.id = [songs[i].art];
+      art.style.height = '300px';
+      art.style.width = '300px';
+      document.body.appendChild(art);
+
+
+      title = document.createElement('div');
+      title.id = [songs[i].title];
+      title.innerText = 'Song: ' + songs[i].title;
+      document.body.appendChild(title);
+      title.style.display = "block"
+      array.push(title.id)
+
+      artist = document.createElement('div');
+      artist.id = [songs[i].artist];
+      artist.innerText = 'Artist: ' + songs[i].artist;
+      document.body.appendChild(artist);
+      artist.style.display = "block"
+      array.push(artist.id)
+
+      album = document.createElement('div');
+      album.id = [songs[i].album];
+      album.innerText = 'Album: ' + songs[i].album;
+      document.body.appendChild(album);
+      album.style.display = "block"
+      array.push(album.id)
+
+      year = document.createElement('div');
+      year.id = [songs[i].year];
+      year.innerText = 'Year: ' + songs[i].year;
+      document.body.appendChild(year);
+      year.style.display = "block"
+      array.push(year.id)
+
+    // var arrayi = new Array
+    }
+return array
+  }
+
+function listener(){
+  for(i=0; i< songs.length;i++) {
+    document.getElementById(songs[i].art).addEventListener('click',myFunction );
+  }
+}
+
+  function myFunction() {
+
+    var x;
+    for(i=0; i<array.length; i++){
+      console.log(array.length);
+      console.log(array);
+  x = document.getElementById(array[i]);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+}
+  load();
+  listener();
+  </script>
+
+    <!-- <div id="imgdiv2">
+      <img src="https://upload.wikimedia.org/wikipedia/en/2/2a/JamesPleasedToMeetYou.jpg" alt="https://upload.wikimedia.org/wikipedia/en/2/2a/JamesPleasedToMeetYou.jpg" onclick="showSongINFO();" style="width:300px;height:300px;" />
+      <img src="https://upload.wikimedia.org/wikipedia/en/1/17/Hooverphonic-Blue_Wonder_Power_Milk.jpg" alt="https://upload.wikimedia.org/wikipedia/en/1/17/Hooverphonic-Blue_Wonder_Power_Milk.jpg" onclick="showSongINFO();" style="width:300px;height:300px;" />
+      <img src="https://upload.wikimedia.org/wikipedia/en/6/68/Oh_Land_%28album%29.png" alt="https://upload.wikimedia.org/wikipedia/en/6/68/Oh_Land_%28album%29.png" onclick="showSongINFO();" style="width:300px;height:300px;" />
+
+    </div> -->
+  </body>
+</html>
